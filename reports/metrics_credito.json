@@ -1,0 +1,240 @@
+{
+  "serie": "BCB SGS 21082 - Inadimplencia da carteira de credito - Total",
+  "n_obs": 187,
+  "periodo": [
+    "2011-03",
+    "2026-09"
+  ],
+  "teste_walk_forward": {
+    "inicio": "2019-02",
+    "n_previsoes": {
+      "1": 91,
+      "3": 89,
+      "6": 86
+    }
+  },
+  "RMSE_relativo_ao_passeio_aleatorio": {
+    "1": {
+      "Passeio aleatório (Δ=0)": 1.0,
+      "Drift": 0.9923,
+      "Sazonal (média do mês)": 0.8201,
+      "AR + sazonal (Ridge)": 0.9054,
+      "QG-Markov (direto)": 2.6794,
+      "QG-Markov nó→nó (pós-hoc)": 1.1601,
+      "QG apenas (Ridge)": 1.024,
+      "AR + sazonal + QG (Ridge)": 0.9868,
+      "AR + sazonal (RF)": 0.7982,
+      "AR + sazonal + QG (RF)": 0.8059,
+      "ARIMA(1,1,1)": 0.9959
+    },
+    "3": {
+      "Passeio aleatório (Δ=0)": 1.0,
+      "Drift": 0.9916,
+      "Sazonal (média do mês)": 0.9734,
+      "AR + sazonal (Ridge)": 0.9663,
+      "QG-Markov (direto)": 1.7261,
+      "QG-Markov nó→nó (pós-hoc)": 1.0646,
+      "QG apenas (Ridge)": 1.2705,
+      "AR + sazonal + QG (Ridge)": 1.2188,
+      "AR + sazonal (RF)": 1.0212,
+      "AR + sazonal + QG (RF)": 1.0289,
+      "ARIMA(1,1,1)": 0.9583
+    },
+    "6": {
+      "Passeio aleatório (Δ=0)": 1.0,
+      "Drift": 1.0074,
+      "Sazonal (média do mês)": 0.9838,
+      "AR + sazonal (Ridge)": 1.0006,
+      "QG-Markov (direto)": 1.3105,
+      "QG-Markov nó→nó (pós-hoc)": 1.0254,
+      "QG apenas (Ridge)": 1.3633,
+      "AR + sazonal + QG (Ridge)": 1.3217,
+      "AR + sazonal (RF)": 1.1042,
+      "AR + sazonal + QG (RF)": 1.1646,
+      "ARIMA(1,1,1)": 0.9607
+    }
+  },
+  "familia_A_QG_vs_sem_QG": [
+    {
+      "horizonte": 1,
+      "modelo": "Ridge",
+      "RMSE_com_QG": 0.1134,
+      "RMSE_sem_QG": 0.104,
+      "razão": 1.0899,
+      "IC95_inf": 0.9967,
+      "IC95_sup": 1.2334,
+      "DM": 1.5133,
+      "p": 0.1337,
+      "p_Holm": 0.5348
+    },
+    {
+      "horizonte": 1,
+      "modelo": "Random Forest",
+      "RMSE_com_QG": 0.0926,
+      "RMSE_sem_QG": 0.0917,
+      "razão": 1.0097,
+      "IC95_inf": 0.9896,
+      "IC95_sup": 1.0443,
+      "DM": 0.775,
+      "p": 0.4404,
+      "p_Holm": 1.0
+    },
+    {
+      "horizonte": 3,
+      "modelo": "Ridge",
+      "RMSE_com_QG": 0.2733,
+      "RMSE_sem_QG": 0.2167,
+      "razão": 1.2614,
+      "IC95_inf": 1.0778,
+      "IC95_sup": 1.6163,
+      "DM": 2.0635,
+      "p": 0.042,
+      "p_Holm": 0.21
+    },
+    {
+      "horizonte": 3,
+      "modelo": "Random Forest",
+      "RMSE_com_QG": 0.2307,
+      "RMSE_sem_QG": 0.229,
+      "razão": 1.0076,
+      "IC95_inf": 0.9722,
+      "IC95_sup": 1.1096,
+      "DM": 0.214,
+      "p": 0.831,
+      "p_Holm": 1.0
+    },
+    {
+      "horizonte": 6,
+      "modelo": "Ridge",
+      "RMSE_com_QG": 0.5034,
+      "RMSE_sem_QG": 0.3811,
+      "razão": 1.3209,
+      "IC95_inf": 1.0969,
+      "IC95_sup": 1.6294,
+      "DM": 2.2797,
+      "p": 0.0251,
+      "p_Holm": 0.1508
+    },
+    {
+      "horizonte": 6,
+      "modelo": "Random Forest",
+      "RMSE_com_QG": 0.4436,
+      "RMSE_sem_QG": 0.4206,
+      "razão": 1.0547,
+      "IC95_inf": 0.9704,
+      "IC95_sup": 1.2734,
+      "DM": 0.8892,
+      "p": 0.3764,
+      "p_Holm": 1.0
+    }
+  ],
+  "familia_B_sazonal_vs_passeio": [
+    {
+      "horizonte": 1,
+      "modelo": "Sazonal (média do mês)",
+      "RMSE_modelo": 0.0942,
+      "RMSE_passeio": 0.1149,
+      "razão": 0.8201,
+      "IC95_inf": 0.736,
+      "IC95_sup": 0.9175,
+      "DM": -2.5275,
+      "p": 0.0132,
+      "p_Holm": 0.0794
+    },
+    {
+      "horizonte": 1,
+      "modelo": "ARIMA(1,1,1)",
+      "RMSE_modelo": 0.1144,
+      "RMSE_passeio": 0.1149,
+      "razão": 0.9959,
+      "IC95_inf": 0.959,
+      "IC95_sup": 1.0326,
+      "DM": -0.1854,
+      "p": 0.8533,
+      "p_Holm": 1.0
+    },
+    {
+      "horizonte": 3,
+      "modelo": "Sazonal (média do mês)",
+      "RMSE_modelo": 0.2182,
+      "RMSE_passeio": 0.2242,
+      "razão": 0.9734,
+      "IC95_inf": 0.8731,
+      "IC95_sup": 1.0929,
+      "DM": -0.4406,
+      "p": 0.6606,
+      "p_Holm": 1.0
+    },
+    {
+      "horizonte": 3,
+      "modelo": "ARIMA(1,1,1)",
+      "RMSE_modelo": 0.2149,
+      "RMSE_passeio": 0.2242,
+      "razão": 0.9583,
+      "IC95_inf": 0.9012,
+      "IC95_sup": 1.0035,
+      "DM": -1.6885,
+      "p": 0.0949,
+      "p_Holm": 0.4743
+    },
+    {
+      "horizonte": 6,
+      "modelo": "Sazonal (média do mês)",
+      "RMSE_modelo": 0.3747,
+      "RMSE_passeio": 0.3809,
+      "razão": 0.9838,
+      "IC95_inf": 0.9506,
+      "IC95_sup": 1.0688,
+      "DM": -0.4189,
+      "p": 0.6764,
+      "p_Holm": 1.0
+    },
+    {
+      "horizonte": 6,
+      "modelo": "ARIMA(1,1,1)",
+      "RMSE_modelo": 0.3659,
+      "RMSE_passeio": 0.3809,
+      "razão": 0.9607,
+      "IC95_inf": 0.9211,
+      "IC95_sup": 1.0366,
+      "DM": -0.8721,
+      "p": 0.3856,
+      "p_Holm": 1.0
+    }
+  ],
+  "robustez_razao_RMSE": {
+    "min": 0.9818567816828703,
+    "mediana": 1.1552094785078704,
+    "max": 2.2827538339597466
+  },
+  "hurst_qg": {
+    "observado": 0.6926802754383801,
+    "calibrado": 0.8112456756308116
+  },
+  "previsao_referencia": [
+    {
+      "horizonte": "1 mês(es)",
+      "alvo": "10/2026",
+      "modelo": "sazonal (média do mês)",
+      "previsão": 5.016,
+      "intervalo_80_inf": 4.91,
+      "intervalo_80_sup": 5.157
+    },
+    {
+      "horizonte": "3 mês(es)",
+      "alvo": "12/2026",
+      "modelo": "passeio aleatório",
+      "previsão": 4.98,
+      "intervalo_80_inf": 4.762,
+      "intervalo_80_sup": 5.29
+    },
+    {
+      "horizonte": "6 mês(es)",
+      "alvo": "03/2027",
+      "modelo": "passeio aleatório",
+      "previsão": 4.98,
+      "intervalo_80_inf": 4.71,
+      "intervalo_80_sup": 5.485
+    }
+  ]
+}
